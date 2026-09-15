@@ -1,0 +1,36 @@
+{
+  "name": "kinetic-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "キネティックタイポグラフィ動画（Remotion）",
+  "scripts": {
+    "doctor": "node scripts/doctor.mjs",
+    "explore": "node scripts/site-explore.mjs",
+    "capture": "node scripts/capture-site.mjs",
+    "assets": "node scripts/gen-assets.mjs",
+    "audio": "node scripts/make-audio.mjs",
+    "sheet": "node scripts/make-contactsheet.mjs",
+    "verify": "node scripts/verify-output.mjs",
+    "typecheck": "tsc --noEmit",
+    "studio": "remotion studio src/index.ts",
+    "render:v": "npm run audio && remotion render src/index.ts MovieVertical output/final-vertical.mp4 --codec=h264 --audio-codec=aac --crf=18",
+    "render:h": "npm run audio && remotion render src/index.ts MovieHorizontal output/final-horizontal.mp4 --codec=h264 --audio-codec=aac --crf=18"
+  },
+  "dependencies": {
+    "@fontsource/noto-sans-jp": "^5.3.0",
+    "@remotion/bundler": "^4.0.524",
+    "@remotion/cli": "^4.0.524",
+    "@remotion/media-utils": "^4.0.524",
+    "@remotion/renderer": "^4.0.524",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "^4.0.524"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "playwright-core": "^1.63.0",
+    "typescript": "^5.7.0"
+  }
+}
